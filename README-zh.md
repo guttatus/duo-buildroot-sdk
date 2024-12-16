@@ -52,7 +52,7 @@ sudo apt install -y pkg-config build-essential ninja-build automake autoconf lib
 ### 获取 SDK
 
 ```bash
-git clone https://github.com/milkv-duo/duo-buildroot-sdk.git --depth=1
+git clone https://github.com/guttatus/duo-buildroot-sdk.git --depth=1
 ```
 
 ### 1、一键编译
@@ -165,7 +165,7 @@ Duo256M(nand):		install/soc_cv1800b_milkv_duo_sd/fip.bin、boot.spinand、rootfs
 ### 在 Linux 主机上拉 SDK 代码
 
 ```bash
-git clone https://github.com/milkv-duo/duo-buildroot-sdk.git --depth=1
+git clone https://github.com/guttatus/duo-buildroot-sdk.git --depth=1
 ```
 
 ### 进入 SDK 代码目录

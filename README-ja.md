@@ -68,7 +68,7 @@ parallel tree python3-dev python3-pip device-tree-compiler ssh cpio fakeroot lib
 ### SDKのソースコードを入手
 
 ```bash
-git clone https://github.com/milkv-duo/duo-buildroot-sdk.git --depth=1
+git clone https://github.com/guttatus/duo-buildroot-sdk.git --depth=1
 ```
 
 ### <1>. 自動コンパイル
@@ -161,7 +161,7 @@ SDKのソースコードをLinuxホストシステムに置いて、Milk-Vから
 ### SDKのソースコードをホストに持ってくる
 
 ```bash
-git clone https://github.com/milkv-duo/duo-buildroot-sdk.git --depth=1
+git clone https://github.com/guttatus/duo-buildroot-sdk.git --depth=1
 ```
 
 ### SDKのコードディレクトリに入る

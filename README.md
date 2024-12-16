@@ -54,7 +54,7 @@ sudo apt install -y pkg-config build-essential ninja-build automake autoconf lib
 ### Get SDK Source Code
 
 ```bash
-git clone https://github.com/milkv-duo/duo-buildroot-sdk.git --depth=1
+git clone https://github.com/guttatus/duo-buildroot-sdk.git --depth=1
 ```
 
 ### <1>. One-click Compilation
@@ -166,7 +166,7 @@ We put the SDK source code on the Linux host system and call the Docker image en
 ### Pull SDK code on Linux host
 
 ```bash
-git clone https://github.com/milkv-duo/duo-buildroot-sdk.git --depth=1
+git clone https://github.com/guttatus/duo-buildroot-sdk.git --depth=1
 ```
 
 ### Enter the SDK code directory

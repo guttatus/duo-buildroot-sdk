@@ -173,20 +173,20 @@ cd duo-buildroot-sdk
 ### Dockerイメージを持ってきて実行する
 
 ```bash
-docker run -itd --name duodocker -v $(pwd):/home/work milkvtech/milkv-duo:latest /bin/bash
+docker run -itd --name duodocker -v $(pwd):/home/work guttatus314/milkv-duo:rust /bin/bash
 ```
 
 コマンド中のパラメータについて:
 - `duodocker` Dockerの名前です。好きな名前を使えます。
 - `$(pwd)` カレントディレクトリです。ここでは先程cdしたduo-buildroot-sdkを指しています。
 - `-v $(pwd):/home/work` 現在のコードディレクトリをDockerイメージの/home/workに結びつけます。
-- `milkvtech/milkv-duo:latest` Milk-VによるDockerイメージです。最初にhub.docker.comから自動でダウンロードされます。
+- `guttatus314/milkv-duo:rust` Milk-VによるDockerイメージです。最初にhub.docker.comから自動でダウンロードされます。
 
 Dockerが正常に実行されたら`docker ps -a`コマンドで実行状態を見ることができます。
 ```bash
 $ docker ps -a
 CONTAINER ID   IMAGE                        COMMAND       CREATED       STATUS       PORTS     NAMES
-8edea33c2239   milkvtech/milkv-duo:latest   "/bin/bash"   2 hours ago   Up 2 hours             duodocker
+8edea33c2239   guttatus314/milkv-duo:rust   "/bin/bash"   2 hours ago   Up 2 hours             duodocker
 ```
 
 ### <1>. Dockerを使用して自動コンパイル

@@ -178,20 +178,20 @@ cd duo-buildroot-sdk
 ### Pull the Docker image and run
 
 ```bash
-docker run -itd --name duodocker -v $(pwd):/home/work milkvtech/milkv-duo:latest /bin/bash
+docker run -itd --name duodocker -v $(pwd):/home/work guttatus314/milkv-duo:rust /bin/bash
 ```
 
 Description of some parameters in the command:
 - `duodocker` Docker name, you can use the name you want to use.
 - `$(pwd)` The current directory, here is the duo-buildroot-sdk directory that was 'cd' to in the previous step.
 - `-v $(pwd):/home/work`  Bind the current code directory to the /home/work directory in the Docker image.
-- `milkvtech/milkv-duo:latest` The Docker image provided by Milk-V will be automatically downloaded from hub.docker.com for the first time.
+- `guttatus314/milkv-duo:rust` The Docker image provided by Milk-V will be automatically downloaded from hub.docker.com for the first time.
 
 After Docker runs successfully, you can use the `docker ps -a` command to view the running status:
 ```bash
 $ docker ps -a
 CONTAINER ID   IMAGE                        COMMAND       CREATED       STATUS       PORTS     NAMES
-8edea33c2239   milkvtech/milkv-duo:latest   "/bin/bash"   2 hours ago   Up 2 hours             duodocker
+8edea33c2239   guttatus314/milkv-duo:rust   "/bin/bash"   2 hours ago   Up 2 hours             duodocker
 ```
 
 ### <1>. One-click compilation using Docker

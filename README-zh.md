@@ -177,20 +177,20 @@ cd duo-buildroot-sdk
 ### 拉取 Docker 镜像并运行
 
 ```bash
-docker run -itd --name duodocker -v $(pwd):/home/work milkvtech/milkv-duo:latest /bin/bash
+docker run -itd --name duodocker -v $(pwd):/home/work guttatus314/milkv-duo:rust /bin/bash
 ```
 
 命令中部分参数说明:
 - `duodocker` docker 运行时名字，可以使用自己想用的名字
 - `$(pwd)` 当前目录，这里是上一步 cd 到的 duo-buildroot-sdk 目录
 - `-v $(pwd):/home/work`  将当前的代码目录绑定到 Docker 镜像里的 /home/work 目录
-- `milkvtech/milkv-duo:latest` Milk-V 提供的 Docker 镜像，第一次会自动从 hub.docker.com 下载
+- `guttatus314/milkv-duo:rust` Milk-V 提供的 Docker 镜像，第一次会自动从 hub.docker.com 下载
 
 Docker 运行成功后，可以用 `docker ps -a` 命令查看运行状态：
 ```bash
 $ docker ps -a
 CONTAINER ID   IMAGE                        COMMAND       CREATED       STATUS       PORTS     NAMES
-8edea33c2239   milkvtech/milkv-duo:latest   "/bin/bash"   2 hours ago   Up 2 hours             duodocker
+8edea33c2239   guttatus314/milkv-duo:rust   "/bin/bash"   2 hours ago   Up 2 hours             duodocker
 ```
 
 ### 1. 使用 Docker 一键编译

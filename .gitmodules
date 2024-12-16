@@ -1,4 +1,3 @@
 [submodule "prototyper"]
 	path = prototyper
-	url = https://github.com/guttatus/prototyper
-	branch = t-head-clint
+	url = https://github.com/rustsbi/prototyper

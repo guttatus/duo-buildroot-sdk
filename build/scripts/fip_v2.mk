@@ -1,17 +1,22 @@
-opensbi: export CROSS_COMPILE=$(CONFIG_CROSS_COMPILE_SDK)
-opensbi: u-boot-build
+rustsbi: u-boot-build
 	$(call print_target)
-	${Q}$(MAKE) -j${NPROC} -C ${OPENSBI_PATH} PLATFORM=generic \
-	    FW_PAYLOAD_PATH=${UBOOT_PATH}/${UBOOT_OUTPUT_FOLDER}/u-boot-raw.bin \
-	    FW_FDT_PATH=${UBOOT_PATH}/${UBOOT_OUTPUT_FOLDER}/arch/riscv/dts/${CHIP}_${BOARD}.dtb
+	${Q}pushd "${RUSTSBI_PATH}" && \
+	${Q}cargo prototyper \
+	    	--payload ${UBOOT_PATH}/${UBOOT_OUTPUT_FOLDER}/u-boot-raw.bin \
+	    	--fdt ${UBOOT_PATH}/${UBOOT_OUTPUT_FOLDER}/arch/riscv/dts/${CHIP}_${BOARD}.dtb && \
+	${Q}cargo prototyper \
+	    	--fdt ${UBOOT_PATH}/${UBOOT_OUTPUT_FOLDER}/arch/riscv/dts/${CHIP}_${BOARD}.dtb && \
+	${Q}popd
 
-opensbi-clean:
+rustsbi-clean:
 	$(call print_target)
-	${Q}$(MAKE) -C ${OPENSBI_PATH} PLATFORM=generic distclean
+	pushd "${RUSTSBI_PATH}" && \
+	${Q}cargo clean && \
+	${Q}popd 
 
 FSBL_OUTPUT_PATH = ${FSBL_PATH}/build/${PROJECT_FULLNAME}
 ifeq ($(call qstrip,${CONFIG_ARCH}),riscv)
-fsbl-build: opensbi
+fsbl-build: rustsbi
 endif
 ifeq (${CONFIG_ENABLE_FREERTOS},y)
 fsbl-build: rtos
@@ -48,11 +53,11 @@ fsbl-clean: rtos-clean
 u-boot-dep: fsbl-build ${OUTPUT_DIR}/elf
 	$(call print_target)
 ifeq ($(call qstrip,${CONFIG_ARCH}),riscv)
-	${Q}cp ${OPENSBI_PATH}/build/platform/generic/firmware/fw_payload.bin ${OUTPUT_DIR}/fw_payload_uboot.bin
-	${Q}cp ${OPENSBI_PATH}/build/platform/generic/firmware/fw_payload.elf ${OUTPUT_DIR}/elf/fw_payload_uboot.elf
+	${Q}cp ${RUSTSBI_PATH}/target/riscv64imac-unknown-none-elf/release/rustsbi-prototyper-payload.bin  ${OUTPUT_DIR}/fw_payload_uboot.bin
+	${Q}cp ${RUSTSBI_PATH}/target/riscv64imac-unknown-none-elf/release/rustsbi-prototyper-payload.elf  ${OUTPUT_DIR}/elf/fw_payload_uboot.elf
 endif
 
 ifeq ($(call qstrip,${CONFIG_ARCH}),riscv)
-u-boot-clean: opensbi-clean
+u-boot-clean: rustsbi-clean
 endif
 u-boot-clean: fsbl-clean

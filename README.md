@@ -24,7 +24,7 @@ Milk-V Duo is an ultra-compact embedded development platform based on the CV1800
 ├── linux_5.10          // linux kernel
 ├── middleware          // self-developed multimedia framework
 ├── device              // configuration files for milkv
-├── opensbi             // opensbi library
+├── prototyper          // rustsbi prototyper
 ├── out                 // final image for SD card
 ├── ramdisk             // prebuilt ramdisk
 └── u-boot-2021.10      // u-boot source code

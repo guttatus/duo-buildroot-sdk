@@ -56,7 +56,7 @@ void jump_to_monitor(uintptr_t monitor_entry, uintptr_t next_addr)
 	fw_dynamic_info.next_mode = FW_DYNAMIC_INFO_NEXT_MODE_S;
 	fw_dynamic_info.boot_hart = -1;
 
-	NOTICE("OPENSBI: next_addr=0x%lx arg1=0x%lx", next_addr, arg1);
+	NOTICE("RUSTSBI: next_addr=0x%lx arg1=0x%lx", next_addr, arg1);
 
 	flush_dcache_range((uintptr_t)&fw_dynamic_info, sizeof(struct fw_dynamic_info));
 

@@ -52,7 +52,6 @@ function build_fsbl()
 {(
   print_notice "Run ${FUNCNAME[0]}() function"
   _build_uboot_env
-  _build_opensbi_env
   cd "$BUILD_PATH" || return
   make fsbl-build
 )}
@@ -138,7 +137,6 @@ function build_uboot()
 {(
   print_notice "Run ${FUNCNAME[0]}() function"
   _build_uboot_env
-  _build_opensbi_env
   _link_uboot_logo
 
   cd "$BUILD_PATH" || return
@@ -430,7 +428,7 @@ function cvi_setup_env()
   fi
 
   export BRAND BUILD_VERBOSE DEBUG PROJECT_FULLNAME
-  export OUTPUT_DIR ATF_PATH BM_BLD_PATH OPENSBI_PATH UBOOT_PATH FREERTOS_PATH
+  export OUTPUT_DIR ATF_PATH BM_BLD_PATH RUSTSBI_PATH UBOOT_PATH FREERTOS_PATH
   export KERNEL_PATH RAMDISK_PATH OSDRV_PATH TOOLS_PATH COMMON_TOOLS_PATH
 
   PROJECT_FULLNAME="$CHIP"_"$BOARD"
@@ -465,7 +463,7 @@ function cvi_setup_env()
   IPC_APP_PATH="$TOP_DIR"/framework/applications/ipc
   AI_SDK_PATH="$TOP_DIR"/cviai
   CVI_PIPELINE_PATH="$TOP_DIR"/cvi_pipeline
-  OPENSBI_PATH="$TOP_DIR"/opensbi
+  RUSTSBI_PATH="$TOP_DIR"/prototyper
   TOOLS_PATH="$BUILD_PATH"/tools
   COMMON_TOOLS_PATH="$TOOLS_PATH"/common
   VENC_PATH="$MW_PATH"/modules/venc

@@ -36,7 +36,7 @@ DuoはCV1800Bをベースにした超小型の組み込みプラットフォー�
 ├── linux_5.10          // Linuxカーネル
 ├── middleware          // 自家製マルチメディアフレームワーク
 ├── device              // Milk-Vのコンフィグレーションファイル
-├── prototyper          // rustsbi prototyper
+├── rustsbi             // rustsbi firmware
 ├── out                 // 完成したSDカード用イメージはここに出てきます
 ├── ramdisk             // 完成済みramsidk
 └── u-boot-2021.10      // u-bootのソースコード

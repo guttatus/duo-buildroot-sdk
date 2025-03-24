@@ -463,7 +463,7 @@ function cvi_setup_env()
   IPC_APP_PATH="$TOP_DIR"/framework/applications/ipc
   AI_SDK_PATH="$TOP_DIR"/cviai
   CVI_PIPELINE_PATH="$TOP_DIR"/cvi_pipeline
-  RUSTSBI_PATH="$TOP_DIR"/prototyper
+  RUSTSBI_PATH="$TOP_DIR"/rustsbi
   TOOLS_PATH="$BUILD_PATH"/tools
   COMMON_TOOLS_PATH="$TOOLS_PATH"/common
   VENC_PATH="$MW_PATH"/modules/venc

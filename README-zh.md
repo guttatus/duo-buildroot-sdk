@@ -24,7 +24,7 @@ Milk-V Duo 是一个基于 CV1800B 芯片的超紧凑嵌入式开发平台。它
 ├── linux_5.10          // 开源 linux 内核
 ├── middleware          // 自研多媒体框架，包含 so 与 ko
 ├── device              // 存放 Milk-V Duo 相关配置及脚本文件的目录
-├── prototyper          // 开源 rustsbi prototyper
+├── rustsbi             // 开源 rustsbi固件
 ├── out                 // Milk-V Duo 最终生成的 SD 卡烧录镜像所在目录
 ├── ramdisk             // 存放最小文件系统的 prebuilt 目录
 └── u-boot-2021.10      // 开源 uboot 代码
